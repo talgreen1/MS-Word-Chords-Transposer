@@ -1,0 +1,90 @@
+Dim notes(11) As String
+Public Const FONT_NAME = "Courier New" '<---Put the name of your chord font here
+
+
+Private Sub initNotesArray()
+notes(0) = "C"
+notes(1) = "C#"
+notes(2) = "D"
+notes(3) = "Eb"
+notes(4) = "E"
+notes(5) = "F"
+notes(6) = "F#"
+notes(7) = "G"
+notes(8) = "Ab"
+notes(9) = "A"
+notes(10) = "Bb"
+notes(11) = "B"
+End Sub
+
+Private Sub test()
+    initNotesArray
+    Debug.Print "0:" + CStr(note2Number("C"))
+    Debug.Print "5:" + CStr(note2Number("F"))
+    Debug.Print "11:" + CStr(note2Number("B"))
+    Debug.Print "B:" + number2Note(11)
+    
+End Sub
+
+Function note2Number(note As String) As Integer
+    For i = 0 To 11
+        If (notes(i) = note) Then
+            note2Number = i
+            Exit For
+        End If
+    Next
+End Function
+Function number2Note(ByRef number As Integer) As String
+    number2Note = notes(number)
+End Function
+
+Sub transpose()
+    Dim trans As Integer
+    Dim i As Integer
+    Dim doc As Document
+    Set doc = ActiveDocument
+        
+    initNotesArray
+    
+    i = 1
+
+    transStr = InputBox("Transpose", "Semitones to transpose:", 0)
+
+    trans = Val(transStr)
+     
+    While i < doc.Range.Characters.Count
+        If (doc.Range.Characters(i).Font.Name = FONT_NAME) Then
+            If (doc.Range.Characters(i).Case = wdUpperCase) Then
+                If (doc.Range.Characters(i + 1) = "#" Or doc.Range.Characters(i + 1) = "b") Then
+                    'Debug.Print doc.Range.Characters(i) + doc.Range.Characters(i + 1)
+                    newNote = getNewNote(doc.Range.Characters(i) + doc.Range.Characters(i + 1), trans)
+                    doc.Range.Characters(i + 1) = ""
+                    doc.Range.Characters(i) = newNote
+                Else
+                    'Debug.Print doc.Range.Characters(i)
+                    newNote = getNewNote(doc.Range.Characters(i), trans)
+                    doc.Range.Characters(i) = newNote
+                End If
+            End If
+        End If
+    i = i + 1
+    Wend
+End Sub
+
+Function getNewNote(note As String, semiTones As Integer) As String
+    Dim curNumber As Integer
+    Dim newNumber As Integer
+    
+    curNumber = note2Number(note)
+    newNumber = curNumber + semiTones
+    
+   If (newNumber < 0) Then
+        newNumber = 12 + newNumber
+    End If
+    
+    newNumber = newNumber Mod 12
+
+    newNote = number2Note((newNumber))
+    getNewNote = newNote
+End Function
+
