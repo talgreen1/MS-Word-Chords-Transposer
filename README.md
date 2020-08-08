@@ -20,4 +20,7 @@ How to install and run the script:
 * Then - you need to copy this code to the '**Normal.dotm**' file: Check the section '**Make a macro available in all documents**' in this [link](https://support.microsoft.com/en-us/office/create-or-run-a-macro-c6b99036-905c-49a6-818a-dfb98b7c3c9c)
 * In order to execute the scrip - you need to run the '**transpose**' macro: Check the section '**Run a macro**' in this [link](https://support.microsoft.com/en-us/office/create-or-run-a-macro-c6b99036-905c-49a6-818a-dfb98b7c3c9c)
 * You can create a button that execute this script. Check this [link](https://support.microsoft.com/en-us/office/assign-a-macro-to-a-button-728c83ec-61d0-40bd-b6ba-927f84eb5d2c#:~:text=Click%20File%20%3E%20Options%20%3E%20Quick%20Access,on%20the%20Quick%20Access%20Toolbar.)
+* When running the macro - you will be prompt to enter the amount of semi-tones to transpose. You can type positive or negative values.
 
+
+Please feel free to [contact me](mailto:talgreen1@yahoo.com?subject=MS-Word%20Chords%20Transposer%20-%20support) if you have any questions. You are welcome to fork it, improve it and create pull requests.
