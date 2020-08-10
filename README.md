@@ -18,7 +18,7 @@ How to install and run the script:
 * You need to enable developer support & add a new module with this script. Check this [link](https://www.datanumen.com/blogs/how-to-run-vba-code-in-your-word/#:%7E:text=Firstly%2C%20click%20%E2%80%9CVisual%20Basic%E2%80%9D,to%20open%20a%20new%20module)
 * After creating a new module, put the code found in the file '**MS-Word-Chords-Transposer-vba-script.txt**' inside the module
 * Then - you need to copy this code to the '**Normal.dotm**' file: Check the section '**Make a macro available in all documents**' in this [link](https://support.microsoft.com/en-us/office/create-or-run-a-macro-c6b99036-905c-49a6-818a-dfb98b7c3c9c)
-* In order to execute the scrip - you need to run the '**transpose**' macro: Check the section '**Run a macro**' in this [link](https://support.microsoft.com/en-us/office/create-or-run-a-macro-c6b99036-905c-49a6-818a-dfb98b7c3c9c)
+* In order to execute the script - you need to run the '**transpose**' macro: Check the section '**Run a macro**' in this [link](https://support.microsoft.com/en-us/office/create-or-run-a-macro-c6b99036-905c-49a6-818a-dfb98b7c3c9c)
 * You can create a button that execute this script. Check this [link](https://support.microsoft.com/en-us/office/assign-a-macro-to-a-button-728c83ec-61d0-40bd-b6ba-927f84eb5d2c#:~:text=Click%20File%20%3E%20Options%20%3E%20Quick%20Access,on%20the%20Quick%20Access%20Toolbar.)
 * When running the macro - you will be prompt to enter the amount of semi-tones to transpose. You can type positive or negative values.
 
