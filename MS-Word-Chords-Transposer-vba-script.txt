@@ -54,7 +54,7 @@ Sub transpose()
      
     While i < doc.Range.Characters.Count
         If (doc.Range.Characters(i).Font.Name = FONT_NAME) Then
-            If (doc.Range.Characters(i).Case = wdUpperCase) Then
+            If (isUppercaseNote(doc.Range.Characters(i))) Then
                 If (doc.Range.Characters(i + 1) = "#" Or doc.Range.Characters(i + 1) = "b") Then
                     'Debug.Print doc.Range.Characters(i) + doc.Range.Characters(i + 1)
                     newNote = getNewNote(doc.Range.Characters(i) + doc.Range.Characters(i + 1), trans)
@@ -88,3 +88,16 @@ Function getNewNote(note As String, semiTones As Integer) As String
     getNewNote = newNote
 End Function
 
+Function isUppercaseNote(note As String) As Boolean
+
+    If (UCase(note) = note) Then
+        Select Case note
+            Case "A", "B", "C", "D", "E", "F", "G"
+            isUppercaseNote = True
+        End Select
+
+    Else
+        isUppercaseNote = False
+    End If
+
+End Function
