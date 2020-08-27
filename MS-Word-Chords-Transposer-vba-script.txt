@@ -1,4 +1,5 @@
 Dim notes(11) As String
+Dim notes1(11) As String
 Public Const FONT_NAME = "Courier New" '<---Put the name of your chord font here
 
 
@@ -15,6 +16,19 @@ notes(8) = "Ab"
 notes(9) = "A"
 notes(10) = "Bb"
 notes(11) = "B"
+
+notes1(0) = "C"
+notes1(1) = "Db"
+notes1(2) = "D"
+notes1(3) = "D#"
+notes1(4) = "E"
+notes1(5) = "F"
+notes1(6) = "Gb"
+notes1(7) = "G"
+notes1(8) = "G#"
+notes1(9) = "A"
+notes1(10) = "A#"
+notes1(11) = "B"
 End Sub
 
 Private Sub test()
@@ -33,6 +47,13 @@ Function note2Number(note As String) As Integer
             Exit For
         End If
     Next
+
+    For i = 0 To 11
+        If (notes1(i) = note) Then
+            note2Number = i
+            Exit For
+        End If
+     Next
 End Function
 Function number2Note(ByRef number As Integer) As String
     number2Note = notes(number)
